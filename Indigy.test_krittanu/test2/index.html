@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>รายชื่อพนักงาน</h3>
+    <div class="button-container">
+        <button class="btn btn-success" onclick="openForm()">เพิ่ม</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+            <th>รหัสพนักงาน <span class="sort-icons">&#9650;&#9660;</span></th>
+            <th>ชื่อ-นามสกุล <span class="sort-icons">&#9650;&#9660;</span></th>
+            <th>เบอร์โทร <span class="sort-icons">&#9650;&#9660;</span></th>
+            <th>ตำแหน่ง <span class="sort-icons">&#9650;&#9660;</span></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>110036</td>
+          <td>สมชาย ใจดี</td>
+          <td>095-256-2026</td>
+          <td>โปรแกรมเมอร์</td>
+          <td>
+            <button class="btn btn-warning" onclick="openForm()">แก้ไข</button>
+            <button class="btn btn-danger" onclick="confirmDelete()">ลบ</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="employeeForm" class="overlay">
+    <div class="form-container">
+      <h2>เพิ่ม/แก้ไข พนักงาน</h2>
+      <form>
+        <div class="form-group">
+          <label>รหัสพนักงาน:</label>
+          <input class="form-control" type="text" required />
+        </div>
+        <div class="form-group">
+          <label>ชื่อ-นามสกุล:</label>
+          <input class="form-control" type="text" required />
+        </div>
+        <div class="form-group">
+          <label>เบอร์โทร:</label>
+          <input class="form-control" type="text" pattern="\d{3}-\d{3}-\d{4}" />
+        </div>
+        <div class="form-group">
+          <label>ตำแหน่ง:</label>
+          <select class="form-control" required>
+            <option value="โปรแกรมเมอร์">โปรแกรมเมอร์</option>
+            <option value="ดีไซเนอร์">ดีไซเนอร์</option>
+            <option value="ผู้จัดการโครงการ">ผู้จัดการโครงการ</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">บันทึก</button>
+        <button class="btn btn-secondary" type="button" onclick="closeForm()">ยกเลิก</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="deletionForm" class="overlay">
+    <div class="form-container">
+      <form>
+        <h2>ต้องการลบพนักงาน ใช่ หรือ ไม่?</h2>
+        <button class="btn btn-success" type="submit">ยืนยัน</button>
+        <button class="btn btn-danger" type="button" onclick="closeForm()">ยกเลิก</button>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+</html>
